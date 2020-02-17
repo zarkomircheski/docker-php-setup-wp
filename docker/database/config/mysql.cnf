@@ -1,0 +1,16 @@
+[mysqld]
+# optimizing performance (development only)
+performance_schema = 0
+innodb_buffer_pool_size = 1G
+innodb_flush_log_at_trx_commit = 0
+sync_binlog = 0
+join_buffer_size = 2M
+sort_buffer_size = 2M
+query_cache_type = 1
+query_cache_size = 128M
+innodb_open_files = 10000
+table_definition_cache = 10000
+table_open_cache = 10000
+# tmpdir = /dev/shm
+explicit_defaults_for_timestamp=0
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
