@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+
+src/*
+docker/database/data-mount/*
+docker/database/import/*
