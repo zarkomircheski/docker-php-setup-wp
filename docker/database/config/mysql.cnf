@@ -1,7 +1,10 @@
 [mysqld]
 # optimizing performance (development only)
 performance_schema = 0
-innodb_buffer_pool_size = 1G
+innodb_buffer_pool_size = 4G
+innodb_log_buffer_size = 256M
+innodb_log_file_size = 2G
+innodb_write_io_threads = 16
 innodb_flush_log_at_trx_commit = 0
 sync_binlog = 0
 join_buffer_size = 2M
@@ -16,3 +19,15 @@ max_allowed_packet = 1000000000
 # tmpdir = /dev/shm
 explicit_defaults_for_timestamp=0
 sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+
+
+[mysqld]
+collation-server = utf8_unicode_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
