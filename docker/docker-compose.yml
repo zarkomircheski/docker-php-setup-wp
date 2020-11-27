@@ -98,6 +98,15 @@ services:
 
     restart: always
 
+  node:
+    image: node:8.12-alpine
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../src:/home/node/app
+
 # - network
 networks:
   web:
